@@ -13,7 +13,7 @@ EXEC= testDurees
 all: $(EXEC) clean
 #regle de compilation du projet
 #les dependances de l'executable. on ajoutera plus les autres .o
-$(EXEC) : duree.o testduree.o main.o
+$(EXEC) : dure.o testdure.o mai.o
 	@echo "création  de l'éxécutable $@"
 	$(CC) $^ $(CFLAGS) $(LINKFLAGS) -o testDurees
 #regle de compilation générique des objets
