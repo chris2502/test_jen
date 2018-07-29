@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="testDuree" default="testDuree">
+<project name="testDuree" basedir=".">
      <target name="compile">
-          <exec dir="." executable="make" failonerror="true">
+          <exec executable="make" failonerror="true">
 			  <arg value="testDuree"/>
 		  </exec>
-
-
      </target>
 </project>
 
