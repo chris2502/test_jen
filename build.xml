@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project default="testDuree">
+<project name="testDuree" default="testDuree">
      <target name="compile">
           <exec dir="." executable="make" failonerror="true">
 			  <arg value="testDuree"/>
