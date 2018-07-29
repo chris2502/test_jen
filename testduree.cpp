@@ -2,7 +2,7 @@
 
 void TestDuree::testIsCopyDuree(void)
 {
-    CPPUNIT_ASSERT(true == duree->isCopyDuree(*duree));
+    CPPUNIT_ASSERT(false == duree->isCopyDuree(*duree));
 }
 
 void TestDuree::setUp(void)
