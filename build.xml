@@ -14,7 +14,7 @@
 	</target>
 	<target name="moveBinary" depends="newDirectory">
 		<echo>Move executable</echo>
-		<move file="./testDuree" tofile="${bin.dir}"/>
+		<move file="./testDuree" todir="${bin.dir}"/>
 	</target>
 	<target name="testDuree" description="cppunittestrun" depends="moveBinary">
 		<echo>start test</echo>
