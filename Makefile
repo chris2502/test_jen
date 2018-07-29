@@ -9,13 +9,13 @@ CXXFLAGS= -Wall -ansi -std=c++11
 #liaison avec la biblithèque cppunit
 LINKFLAGS= -lcppunit
 #nom de l'executable
-EXEC= testDuree
+EXEC= testDurees
 all: $(EXEC) clean
 #regle de compilation du projet
 #les dependances de l'executable. on ajoutera plus les autres .o
 $(EXEC) : duree.o testduree.o main.o
 	@echo "création  de l'éxécutable $@"
-	$(CC) $^ $(CFLAGS) $(LINKFLAGS) -o testDuree
+	$(CC) $^ $(CFLAGS) $(LINKFLAGS) -o testDurees
 #regle de compilation générique des objets
 %.o : $(SRC)%.cc
 	@echo "création de l'objet $@"
