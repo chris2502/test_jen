@@ -9,8 +9,12 @@
 	</target>
 	<target name="testDureeCompile" description="cppunittestcompile">
 		<echo>--start compilation--</echo>
-	  	<exec executable="${make.cmd}" destdir="${bin.dir}" failonerror="true"/>
+	  	<exec executable="${make.cmd}" failonerror="true"/>
 		<echo>--end compilation--</echo>
+	</target>
+	<target name="moveBinary">
+		<echo>Move executable</echo>
+		<move fiel="./testDuree" tofile="${bin.dir}"/>
 	</target>
 	<target name="testDuree" description="cppunittestrun" depends="testDureeCompile">
 		<echo>start test</echo>
