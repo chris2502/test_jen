@@ -1,10 +1,12 @@
+<?xml version="1.0"?>
+
+<property name="make.cmd" value="/usr/bin/make"/>
+<property name="src.dir" value="."/>
 
 
-<target name="testDureeCompile">
-  <exec dir="./" executable="make" failonerror="true"/>
-</target>
-
-<target name="testDuree">
-  <exec dir="./" executable="./testDuree" failonerror="false"/>
+<target name="testDureeCompile" description="cppunittestcompile">
+  <exec dir="${src.dir}" executable="${make.cmd}" failonerror="true">
+	  <arg value="testDuree"/>
+  </exec>
 </target>
 
