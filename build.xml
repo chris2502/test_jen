@@ -3,20 +3,20 @@
 <project name="testDuree" basedir=".">
 	<property name="make.cmd" value="make"/>
 	<property name="bin.dir" value="./bin"/>
-	<target name="newDirectory">
-		<echo>creating bin directory</echo>
-		<mkdir dir="${bin.dir}"/>
-	</target>
 	<target name="testDureeCompile" description="cppunittestcompile">
 		<echo>--start compilation--</echo>
 	  	<exec executable="${make.cmd}" failonerror="true"/>
 		<echo>--end compilation--</echo>
 	</target>
-	<target name="moveBinary">
+	<target name="newDirectory" depends="testDureeCompile">
+		<echo>creating bin directory</echo>
+		<mkdir dir="${bin.dir}"/>
+	</target>
+	<target name="moveBinary" depends="newDirectory">
 		<echo>Move executable</echo>
 		<move fiel="./testDuree" tofile="${bin.dir}"/>
 	</target>
-	<target name="testDuree" description="cppunittestrun" depends="testDureeCompile">
+	<target name="testDuree" description="cppunittestrun" depends="moveBinary">
 		<echo>start test</echo>
 	  	<exec executable="${bin.dir}/testDuree" failonerror="true"/>
 		<echo>end test</echo>
