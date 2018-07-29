@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="testDuree" basedir=".">
-     <target name="compile">
-          <exec executable="make" failonerror="true">
-			  <arg value="testDuree"/>
-		  </exec>
-     </target>
+	<property name="make.cmd" value="/usr/bin/make"/>
+	<target name="testDureeCompile" description="cppunittestcompile">
+	  <exec executable="${make.cmd}" failonerror="true">
+		  <arg value="testDuree"/>
+	  </exec>
+	</target>
+	<target name="testDuree" description="cppunittestrun" depends="testDureeCompile">
+	  <exec executable="./testDuree" failonerror="false">
+	  </exec>
+	</target>
 </project>
-
-
