@@ -4,9 +4,3 @@
   </exec>
 </target>
 
-<target name="testDuree" description="cppunittestrun">
-  <exec dir="./" executable="./testDuree" failonerror="false">
-  </exec>
-
-</target>
-
