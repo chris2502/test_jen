@@ -1,10 +1,10 @@
 
 
-<target name="testDureeCompile" description="cppunittestcompile">
+<target name="testDureeCompile">
   <exec dir="./" executable="make" failonerror="true"/>
 </target>
 
-<target name="testDuree" description="cppunittestrun">
+<target name="testDuree">
   <exec dir="./" executable="./testDuree" failonerror="false"/>
 </target>
 
