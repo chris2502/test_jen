@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="testDuree" basedir=".">
+<project name="testuree" basedir=".">
 	<property name="make.cmd" value="make"/>
 	<target name="testDureeCompile" description="cppunittestcompile">
 	  <exec executable="${make.cmd}" failonerror="true"/>
