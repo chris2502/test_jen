@@ -1,12 +1,27 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<property name="make.cmd" value="/usr/bin/make"/>
-<property name="src.dir" value="."/>
+<project name="your project name" default="your project name">
+     <target name="your desired name">
+          <path id="dist.classpath">
+               <fileset dir="name of the folder that contained external jars" includes="**/*.jar, **/*.zip" />
+          </path>
+          <manifestclasspath property="dist.manifest.classpath" jarfile="your desired name for executable jar file">
+               <classpath refid="dist.classpath" />
+          </manifestclasspath>
+           
+          <jar destfile="your desired name for executable jar file" compress="true">
+               <fileset dir="path of classes in your project" includes="**/*.*" />
+               <zipfileset dir="a folder contains any other file if needed">
+                    <include name="*.*"/>
+               </zipfileset>
+               <manifest>
+                    <attribute name="Main-Class" value="name of your main class" />
+                    <attribute name="Class-Path" value="${dist.manifest.classpath}"/>   
+               </manifest>
+          </jar>
 
 
-<target name="testDureeCompile" description="cppunittestcompile">
-  <exec dir="${src.dir}" executable="${make.cmd}" failonerror="true">
-	  <arg value="testDuree"/>
-  </exec>
-</target>
+     </target>
+</project>
+
 
