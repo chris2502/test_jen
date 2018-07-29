@@ -1,6 +1,20 @@
-<target name="testDureeCompile" description="cppunittestcompile">
-  <exec dir="./" executable="/usr/bin/make" failonerror="true">
-	  <arg value="testDuree"/>
-  </exec>
-</target>
+<?xml version="1.0"?>
 
+<project default="run">
+
+	<property name="make.cmd" value="/usr/bin/make"/>
+	<property name="src.dir" value="./"/>
+
+
+	<target name="testDureeCompile" description="cppunittestcompile">
+	  <exec dir="${src.dir}" executable="${make.cmd}" failonerror="true">
+		  <arg value="testDuree"/>
+	  </exec>
+	</target>
+
+	<target name="testDuree" description="cppunittestrun">
+	  <exec dir="${src.dir}" executable="./testDuree" failonerror="false">
+	  </exec>
+	</target>
+
+<project/>
