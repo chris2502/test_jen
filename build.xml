@@ -1,14 +1,10 @@
 
 
-<property name="make.cmd" value="/usr/bin/make"/>
-<property name="src.dir" value="./"/>
-
-
 <target name="testDureeCompile" description="cppunittestcompile">
-  <exec dir="${src.dir}" executable="${make.cmd}" failonerror="true"/>
+  <exec dir="./" executable="make" failonerror="true"/>
 </target>
 
 <target name="testDuree" description="cppunittestrun">
-  <exec dir="${src.dir}" executable="./testDuree" failonerror="false"/>
+  <exec dir="./" executable="./testDuree" failonerror="false"/>
 </target>
 
