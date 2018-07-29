@@ -1,22 +1,17 @@
-<property name="make.cmd" value="/usr/bin/make"/>
+<?xml version="1.0"?>
+	<property name="make.cmd" value="/usr/bin/make"/>
+	<target name="testDureeCompile"
+	      description="cppunit test compile" >
+	  <exec dir="${build.native}/Test" executable="${make.cmd}" failonerror="true">
 
-...
-...
-...
+	  <arg value="testDuree"/>
+	  </exec>
+	</target>
 
-<target name="testDureeCompile"
-      description="cppunit test compile" >
-  <exec dir="${build.native}/Test" executable="${make.cmd}" failonerror="true">
+	<target name="testDuree" 
+	      description="cppunit test run" >
+	  <exec dir="${build.native}/Test" executable="./testDuree" failonerror="false">
+	  </exec>
 
-  <arg value="testduree"/>
-  </exec>
-</target>
-
-<target name="testduree" 
-      description="cppunit test run" >
-  <exec dir="${build.native}/Test" executable="./testDuree" failonerror="false">
-  </exec>
-
-</target>
-
+	</target>
 
