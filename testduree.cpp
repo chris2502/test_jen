@@ -27,7 +27,7 @@ void TestDuree::testOperatorMoins(void)
 
 void TestDuree::testOperatorEgal(void)
 {
-    Duree dureeExpected(2, 45, 59);
+    Duree dureeExpected(3, 45, 59);
 
     CPPUNIT_ASSERT_EQUAL(*duree, *duree);
     CPPUNIT_ASSERT_EQUAL(dureeExpected, *duree);
