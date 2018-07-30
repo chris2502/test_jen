@@ -30,7 +30,7 @@
 		<echo>move xml test: cppTestDureeResult.xml</echo>
 		<move file="./cppTestDureeResult.xml" todir="${xml.dir}"/>
 	</target>
-	<target name="moveCppCheckXml" depends="newDirectoryXml">
+	<target name="moveCppCheckXml" depends="moveResultTestXml">
 		<echo>move xml test: cppCheck.Xml</echo>
 		<move file="./cppcheck.xml" todir="${xml.dir}"/>
 	</target>
