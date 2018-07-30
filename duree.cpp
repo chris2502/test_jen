@@ -45,6 +45,20 @@ bool Duree::isCopyDuree(Duree const &duree)
     return true;
 }
 
+ostream& operator<<(ostream &os, Duree const &duree)
+{
+        os << to_string(duree.hour) + "h:" + to_string(duree.min) + "min:" + to_string(duree.sec) + "\n";;
+        return os;
+}
+istream& operator>>(istream &is, Duree &duree)
+{
+        is >> duree.hour;
+        is >> duree.min;
+        is >> duree.sec;
+
+        return is;
+}
+
 bool operator==(Duree const &duree1, Duree const &duree2)
 {
         if(duree1.hour==duree2.hour &&
@@ -55,20 +69,9 @@ bool operator==(Duree const &duree1, Duree const &duree2)
 	
 	return false;
 }
-
-ostream& operator<<(ostream &os, Duree const &duree)
+bool operator!=(const Duree &duree1, const Duree &duree2)
 {
-	os << to_string(duree.hour) + "h:" + to_string(duree.min) + "min:" + to_string(duree.sec) + "\n";;
-	return os;
-}
-
-istream& operator>>(istream &is, Duree &duree)
-{
-        is >> duree.hour;
-        is >> duree.min;
-        is >> duree.sec;
-
-	return is;
+    return !(duree1 == duree2);
 }
 
 Duree operator+(Duree &duree1, Duree &duree2)
@@ -78,19 +81,41 @@ Duree operator+(Duree &duree1, Duree &duree2)
 
     if(resultSec >= 60)
     {
-        resultSec = resultSec % 60;
         extraMin = resultSec / 60;
+        resultSec = resultSec % 60;
     }
 
-    int resultMin = duree1.min + duree2.min;
+    int resultMin = duree1.min + duree2.min + extraMin;
     int extraHour = 0;
     if(resultMin >= 60)
     {
         extraHour = resultMin /60;
-        resultMin = resultMin % 60 + extraMin;
+        resultMin = resultMin % 60;
     }
     int resultHour = duree1.getHour() + duree2.getHour() + extraHour;
 
     return Duree(resultHour, resultMin, resultSec);
 }
 
+Duree operator-(Duree &duree1, Duree &duree2)
+{
+    int resultSec = duree1.sec - duree2.sec;
+    int extraMin = 0;
+
+    if(resultSec < 0)
+    {
+        extraMin = 1;
+        resultSec = 60 + resultSec;
+    }
+
+    int resultMin = duree1.min - duree2.min - extraMin;
+    int extraHour = 0;
+    if(resultMin < 0)
+    {
+        extraHour = 1;
+        resultMin = 60 + resultMin;
+    }
+    int resultHour = duree1.getHour() - duree2.getHour() - extraHour;
+
+    return Duree(resultHour, resultMin, resultSec);
+}

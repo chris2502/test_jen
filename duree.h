@@ -29,8 +29,10 @@ class Duree
 		string displayTime() const;
                 bool isCopyDuree(Duree const &duree);
                 friend ostream& operator<<(ostream &os, Duree const &duree);
-                friend bool operator==(Duree const &duree1, Duree const &duree2);
                 friend istream& operator>>(istream &is, Duree &duree);
+                friend bool operator==(Duree const &duree1, Duree const &duree2);
+                friend bool operator!=(Duree const &duree1, Duree const &duree2);
                 friend Duree operator+(Duree &duree1, Duree &duree2);
+                friend Duree operator-(Duree &duree1, Duree &duree2);
 };
 

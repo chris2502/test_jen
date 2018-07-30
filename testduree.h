@@ -30,6 +30,10 @@ class TestDuree: public CppUnit::TestFixture
 
     CPPUNIT_TEST_SUITE(TestDuree);
     CPPUNIT_TEST(testIsCopyDuree);
+    CPPUNIT_TEST(testOperatorPlus);
+    CPPUNIT_TEST(testOperatorMoins);
+    CPPUNIT_TEST(testOperatorEgal);
+    CPPUNIT_TEST(testOperatorDifferent);
     CPPUNIT_TEST_SUITE_END();
 public:
     void setUp(void);
@@ -37,7 +41,10 @@ public:
 
 protected:
     void testIsCopyDuree(void);
-
+    void testOperatorPlus(void);
+    void testOperatorMoins(void);
+    void testOperatorEgal(void);
+    void testOperatorDifferent(void);
 private:
     Duree *duree;
 
