@@ -5,7 +5,7 @@ inc= -I ./
 #nom du compilateur
 CC= g++
 #option de compilation
-CXXFLAGS= -Wall -ansi -std=c++11
+CXXFLAGS= -Wall -ansi -std=c++17
 #liaison avec la biblithèque cppunit
 LINKFLAGS= -lcppunit
 #nom de l'executable
