@@ -46,7 +46,7 @@ protected:
     void testOperatorEgal(void);
     void testOperatorDifferent(void);
 private:
-    Duree *duree;
+    Duree *duree=nullptr;
 
 };
 
